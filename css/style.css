@@ -6,7 +6,7 @@ body{
 	width: 100%;
 	height: 50px;
 	background-color: rgba(7,74,140,0.93);
-	color: yellow;
+
 	font-size: 22px;	
 	display: flex;
 	justify-content: space-between; 
@@ -22,4 +22,50 @@ body{
 }
 .navi{	
 	display: flex;
-	}
+}
+
+.conteiner{
+    width: 1170px;
+    background-color: blueviolet;
+    margin: 0 auto;
+}
+.block{
+    width: 350px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.line1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ .block:nth-child(1){
+    background-color: aqua;
+}
+.block:nth-child(2){
+    background-color: rgb(74, 163, 163);
+}
+.block:nth-child(3){
+    background-color: rgb(143, 147, 199);
+}
+.block:nth-child(4){
+    background-color: rgb(134, 11, 118);
+}
+.block:nth-child(5){
+    background-color: rgb(99, 207, 12);
+}
+.block:nth-child(6){
+    background-color: rgb(203, 50, 11);
+}
+
+
+.text-block{
+    width: 253px;
+    background-color: bisque;
+    text-align: center;
+}
