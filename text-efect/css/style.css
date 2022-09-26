@@ -56,23 +56,17 @@ body{
     text-align: center;
 }
 .link-block{
-    
-    color: yellow;
-    font-size: 17px;
+    width: 253px;
+    color: rgb(255, 179, 0);
+    margin-top: 10px;
     text-align: center;
-    height: 50px;
-    
-    
-}
-.link-block:hover{
-	background-color: rgba(15, 134, 189, 0.93);
-	height: 50px;	
 }
 
 /*
  .block:nth-child(1){
-    background-color: rgb(239, 253, 149);
+    .box{ font-size: 22px; text-shadow: 1px 1px 1px red; } 
 }
+
 .block:nth-child(2){
     background-color: rgb(239, 253, 149);
 }
@@ -88,5 +82,5 @@ body{
 .block:nth-child(6){
     background-color: rgb(239, 253, 149);
 }
-*/
+
 

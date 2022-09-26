@@ -1,0 +1,31 @@
+.big-box{
+    width: 150px;
+    height: 150px;
+    background-color: aqua;
+    border-radius: 30px;
+    animation: box 3s infinite alternate;
+    
+}
+@keyframes box{
+    0% {transform: translate(100px, 100px)rotate(0deg);}
+    
+    100% {transform: translate(900px)rotate(360deg);}
+}
+
+
+
+
+
+/*
+
+{
+    0% {transform: translatex(100px, 600px)rotate(0deg);}
+    100% {transform: translatex(1000px)rotate(360deg);}
+
+
+
+                @keyframes svetafori {
+                0% {transform: translatex(100px, 600px)rotate(0deg);}
+                100% {transform: translatex(1000px)rotate(360deg);}
+            }
+}

@@ -1,0 +1,17 @@
+.big-box{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;      
+   /*
+    transition-property: all;
+    transition-duration: 5s;  რამდენი წამი მოანდომოს
+    transition-timing-function: linear;   რა სიჩქარით დაიწყოს და რა სიჩქარით დასრულდეს
+    transition-delay: 2s;       რამდენ ხანში დაიწყოს   */
+    
+    transition: all 5s linear 0.5s;
+}
+
+.big-box:hover{
+
+    background-color: rgb(140, 255, 0);
+}

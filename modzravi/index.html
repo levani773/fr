@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/reset.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="big-box"></div>
+    <div class="smol-box">
+        <textarea name="box" cols="30" rows="50">
+
+            .big-box{
+                width: 150px;
+                height: 150px;
+                background-color: aqua;
+                border-radius: 30px;
+                animation: box 3s infinite alternate;
+                
+            }
+            @keyframes box{
+                0% {transform: translate(100px, 100px)rotate(0deg);}
+                
+                100% {transform: translate(900px)rotate(360deg);}
+            }
+        </textarea>
+    </div>
+    
+</body>
+</html>
