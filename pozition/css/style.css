@@ -1,4 +1,6 @@
-
+body{
+	background-color: rgb(232, 232, 150);
+}
 
 .site-logo-1{
 	width: 100%;
@@ -28,7 +30,7 @@
     margin: 0 auto;
 }
 .block{
-    width: 350px;
+    width: 500px;
     
     display: flex;
     justify-content: center;
