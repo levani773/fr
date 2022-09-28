@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="css/reset.css">
-    <link type="text/css" rel="stylesheet" href="css/keyframe.css">
+    <link type="text/css" rel="stylesheet" href="css/keyframe2.css">
     <link rel="icon" href="logo/favicon.png" sizes="16x16">
     <title>@keyframes</title>
 
@@ -33,22 +33,34 @@
 <div class="conteiner">
     <div class="line1">
         <div class="block">  
-            <h3>transform: translate rotate</h3>
-            <p> <a class="link-block" href="keyframe4.html">transform: translate rotate</a></p>
-         </div>
-        <div class="block">  
-           <h3> @keyframes Rule</h3>
-           <p> <a class="link-block" href="keyframe1.html"> for - to</a></p>
+           
+            <div class="anime"></div>
+        </div>      
+        
+        <div class="block">     
+            <h3>@keyframes Rule</h3>   
+            <br>
+            <p>.anime2{</p>
+            <p>width: 50px;</p>
+            <p>height: 50px;</p>
+            <p>background-color: red;</p>
+            <p>position: absolute;</p>
+            <p>animation: das 5s infinite;  }</p>
+            <br>
+            <p>@keyframes das {</p>
+            <p>0% {top: 0px; left: 0px; background-color: yellow;}</p>
+            <p>25%{top: 0px; left: 100px; background-color: blue;}</p>
+            <p>50% {top: 100px; left: 100px; background-color: yellow;}</p>
+            <p>75% {top: 100px; left: 0px; background-color: yellow;}</p>
+            <p>100%{top: 0px; left: 0px; background-color: blue;}</p>
+            <br>
+               <p>5s - 5 წამი</p>
+               <p>boll - ანიმაციის სახელი</p>
+               <p>infinite - ჩაციკლული. შეგვიძლია რაოდენობა რიცხვებით მიუთითოთმ მაგ: 3 ან 4</p>
+            
         </div>
-        <div class="block">  
-            <h3> @keyframes Rule</h3>
-            <p> <a class="link-block" href="keyframe2.html"> 0% - 100%</a></p>
-         </div>
-         <div class="block">  
-            <h3> @keyframes Rule</h3>
-            <p> <a class="link-block" href="keyframe3.html">@keyframes Rule transform: rotate(360deg)</a></p>
-         </div>
     </div> 
+    
 </div>
 
 </section>
