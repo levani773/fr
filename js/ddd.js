@@ -12,8 +12,20 @@ function getusersinfo(page) {
 
         responsedata.data.forEach(item => {
             let li = document.createElement('li');
-            li.textContent = item.first_name;
-            li.classList.add('list');
+
+            let p =document.createElement('p');
+            p.textContent = item.first_name;
+
+            let img = document.createElement('img');
+            img.src = item.avatar;
+            img.classList.add('imige-block');
+
+            let span = document.createElement('span');
+            span.textContent = item.email;
+            
+            li.appendChild(img);
+            li.appendChild(p);
+            li.appendChild(span);
 
             fragment.appendChild(li);
         });
