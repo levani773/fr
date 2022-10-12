@@ -53,7 +53,7 @@ function getusersinfo(page) {
 
 document.getElementById('next').addEventListener('click', function() {
     if ( currentpage == totalpages) {
-
+        return;
     }
     currentpage += 1;
 
