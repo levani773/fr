@@ -1,63 +1,48 @@
+let mainWraper = document.getElementById('post-block');
+let overlay = document.getElementById('overlay');
+let close = document.getElementById('close');
 
-let currentpage = 1;
 
-let totalpages;
+function ajax(){
+    let requist = new XMLDocument();
+    requist.open('get', 'http://jsonplaceholder.typicode.com/posts')
 
-function getusersinfo(page) {
-   function render(){
-        let response = this.responseText;
-        let responsedata = JSON.parse(response);
-       
-        var fragment = document.createDocumentFragment();
-
-        responsedata.data.forEach(item => {
-            let li = document.createElement('li');
-
-            let p =document.createElement('p');
-            p.textContent = item.first_name;
-
-            let img = document.createElement('img');
-            img.src = item.avatar;
-            img.classList.add('imige-block');
-
-            let span = document.createElement('span');
-            span.textContent = item.email;
-            
-            li.appendChild(img);
-            li.appendChild(p);
-            li.appendChild(span);
-
-            fragment.appendChild(li);
+    requist.addEventListener('load', function(){
+        let data = JSON.parse(requist.responseText);
+        
+        data.forEach(element => {
+            createPost(element);
         });
-       
-        document.getElementById('list').innerHTML =' ';
-        document.getElementById('list').appendChild(fragment);
-        totalpages = responsedata.total_pages();
+        console.log(data)
+    });
+    requist.send();
+}
+function createPost(item) {
+    let divWraper = document.createElement('div'); //შევქმენი დივი
+    divWraper.classList.add('posts');
+    divWraper.setAttribute('data-id', item.id);
+
+    let h1 = document.createElement('h1'); //შევქმენი 
+    h1.innerText = item.id;
+    let text = document.createElement('div'); //შევქმენი მეორე დივი
+    text.innerText = item.title;
     
-   }
-   
-   let requist = new XMLHttpRequest();
-   requist.addEventListener('load',render);
-   requist.open('GET', 'https://reqres.in/api/users?page=' + page);
-   requist.send();
-   }
+    divWraper.appendChild(h1);  //ჩავსვი დივში
+    divWraper.appendChild(text); //ჩავსვი დივში
 
-    document.getElementById('prev').addEventListener('click', function() {
-       if ( currentpage == 1) {
-        return;
-       }
-        currentpage -= 1;
+    divWraper.addEventListener('click', function(event){
+        let id = event.target.getAttribute('data-id');
+    }); 
 
-    getusersinfo(currentpage);
-})
+    mainWraper.appendChild(divWraper);
+}
 
-document.getElementById('next').addEventListener('click', function() {
-    if ( currentpage == totalpages) {
-        return;
-    }
-    currentpage += 1;
-
-    getusersinfo(currentpage);
+function openoverlay(id) {
+    overlay.classList.add('active');
+    console.log(id);
+}
+close.addEventListener('click', function(){
+    overlay.classList.remove('active');
 });
 
-getusersinfo();
+ajax();
