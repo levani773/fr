@@ -7,7 +7,7 @@ function ajax() {
     let requist = new XMLHttprequest();
     requist.open('GET', 'http://jsonplaceholder.typicode.com/posts')
 
-    requist.addEventListener('load', function(){
+    requist.addEventListener('load', function() {
         let data = JSON.parse(requist.responseText);
         
         data.forEach(element => {
@@ -15,8 +15,10 @@ function ajax() {
         });
        
     });
+
     requist.send();
 }
+
 function createPost(item) {
     let divWraper = document.createElement('div'); //შევქმენი დივი
     divWraper.classList.add('posts');
@@ -32,7 +34,7 @@ function createPost(item) {
     divWraper.appendChild(h1);  //ჩავსვი დივში
     divWraper.appendChild(text); //ჩავსვი დივში
 
-    divWraper.addEventListener('click', function(event){
+    divWraper.addEventListener('click', function(event) {
         let id = event.target.getAttribute('data-id');
         openoverlay(id);
     }); 
@@ -44,7 +46,7 @@ function openoverlay(id) {
     overlay.classList.add('active');
     console.log(id);
 }
-close.addEventListener('click', function(){
+close.addEventListener('click', function() {
     overlay.classList.remove('active');
 })
 
