@@ -110,7 +110,7 @@ close.addEventListener('click', function() {
     content.innerHTML = ' ';
 })
 
-addPost.addEventListener('click', function(){
+addPost.addEventListener('click', function() {
     postOverlay.classList.add('active');
 })
 
