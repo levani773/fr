@@ -5,7 +5,7 @@ let close = document.getElementById('close');
 
 function ajax() {
     let requist = new XMLHttprequest();
-    requist.open('GET', 'http://jsonplaceholder.typicode.com/posts')
+    requist.open('GET', 'http://jsonplaceholder.typicode.com/posts');
 
     requist.addEventListener('load', function() {
         let data = JSON.parse(requist.responseText);
@@ -48,6 +48,6 @@ function openoverlay(id) {
 }
 close.addEventListener('click', function() {
     overlay.classList.remove('active');
-})
+});
 
 ajax();
