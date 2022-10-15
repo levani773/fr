@@ -18,7 +18,7 @@ function ajax(url, callback) {
     requist.send();
 }
 
-ajax('http://jsonplaceholder.typicode.com/posts', function(data) {
+ajax('https://jsonplaceholder.typicode.com/posts', function(data) {
     printdata(data);
 });
 
@@ -53,7 +53,7 @@ function createPost(item) {
 
 function openoverlay(id) {
     overlay.classList.add('active');
-    let url = 'http://jsonplaceholder.typicode.com/posts/$[id]';
+    let url = 'https://jsonplaceholder.typicode.com/posts/$[id]';
     ajax(url, function(data) {
         overlayfunction(data);
     }) 
@@ -81,5 +81,6 @@ function overlayfunction(item) {
 
 close.addEventListener('click', function() {
     overlay.classList.remove('active');
-});
+    content.innerHTML = ' ';
+})
 
