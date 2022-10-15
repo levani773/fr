@@ -38,7 +38,6 @@ function createPost(item) {
     divWraper.setAttribute('data.id', item.id);
 
     let deletebutton = document.createElement('button');
-    event.stopPropagation();
     deletebutton.setAttribute('data.id', item.id);
     deletebutton.innerText = 'delete';
 
@@ -60,7 +59,7 @@ function createPost(item) {
     });
 
     divWraper.addEventListener('click', function(event) {
-        let id = event.target.getAttribute('data.id');
+        let Id = event.target.getAttribute('data.id');
         openoverlay(id);
     }); 
 
@@ -78,7 +77,7 @@ function openoverlay(id) {
 function deletepost(id) {
     let url = 'https://jsonplaceholder.typicode.com/posts/${id}';
     fetch(url, {
-        method: 'delete',
+        method: 'DELETE',
     })    
     .then(response => response.json())
     .then(data => {
@@ -87,11 +86,11 @@ function deletepost(id) {
 }
 
 function overlayfunction(item) {
-    let spanuserid = document.createElement('span');
-    spanuserid.innerText = item.userid;
+    let spanuserId = document.createElement('span');
+    spanuserId.innerText = item.userId;
 
-    let pid = document.createElement('p');
-    pid.innerText = item.id;
+    let pId = document.createElement('p');
+    pId.innerText = item.id;
 
     let title = document.createElement('h2');
     title.innerText = item.title;
@@ -99,8 +98,8 @@ function overlayfunction(item) {
     let description = document.createElement('p');
     description.innerText = item.body;
 
-    content.appendChild(spanuserid);
-    content.appendChild(pid);
+    content.appendChild(spanuserId);
+    content.appendChild(pId);
     content.appendChild(title);
     content.appendChild(description);
 }
@@ -116,6 +115,9 @@ addPost.addEventListener('click', function() {
 
 form.addEventListener('submit', function(event){
     event.preventDefault();
-    console.log(event.target[0].value);
-    console.log(event.target[1].value);
+    let formData = {
+        title: event.target[0].valuem
+       
+    }
+    console.log(formData);
 })
