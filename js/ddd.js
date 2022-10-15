@@ -3,7 +3,7 @@ let overlay = document.getElementById('overlay');
 let close = document.getElementById('close');
 
 
-function ajax(){
+function ajax() {
     let requist = new XMLDocument();
     requist.open('GET', 'http://jsonplaceholder.typicode.com/posts')
 
