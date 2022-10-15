@@ -2,6 +2,10 @@ let mainWraper = document.getElementById('post-block');
 let overlay = document.getElementById('overlay');
 let close = document.getElementById('close');
 let content = document.getElementById('content');
+let addPost = document.getElementById('add');
+let postOverlay = document.getElementById('postOverlay');
+let form = document.getElementById('form');
+
 
 //http://jsonplaceholder.typicode.com/posts
 
@@ -65,16 +69,20 @@ function createPost(item) {
 
 function openoverlay(id) {
     overlay.classList.add('active');
-    let url = 'https://jsonplaceholder.typicode.com/posts/$[id]';
+    let url = 'https://jsonplaceholder.typicode.com/posts/${id}';
     ajax(url, function(data) {
         overlayfunction(data);
     }) 
     //console.log(id);
 }
-function deletepost(id){
-    let url = 'https://jsonplaceholder.typicode.com/posts/$[id]';
-    fetch(url {
-        method
+function deletepost(id) {
+    let url = 'https://jsonplaceholder.typicode.com/posts/${id}';
+    fetch(url, {
+        method: 'delete',
+    })    
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
     })
 }
 
@@ -102,3 +110,12 @@ close.addEventListener('click', function() {
     content.innerHTML = ' ';
 })
 
+addPost.addEventListener('click', function(){
+    postOverlay.classList.add('active');
+})
+
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+    console.log(event.target[0].value);
+    console.log(event.target[1].value);
+})
