@@ -1,11 +1,12 @@
 let mainWraper = document.getElementById('post-block');
 let overlay = document.getElementById('overlay');
 let close = document.getElementById('close');
+let content = document.getElementById('content');
 
 //http://jsonplaceholder.typicode.com/posts
 
 function ajax(url, callback) {
-    let requist = XMLHttprequest();
+    let requist = new XMLHttpRequest();
     requist.open('GET', url);
 
     requist.addEventListener('load', function() {
