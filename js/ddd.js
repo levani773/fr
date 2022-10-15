@@ -63,6 +63,20 @@ function openoverlay(id) {
 function overlayfunction(item) {
     let spanuserid = document.createElement('span');
     spanuserid.innerText = item.userId;
+
+    let pId = document.createElement('p');
+    pId.innerText = item.Id;
+
+    let title = document.createElement('h2');
+    title.innerText = item.title;
+
+    let description = document.createElement('p');
+    description.innerText = item.body;
+
+    content.appendChild(spanuserid);
+    content.appendChild(pId);
+    content.appendChild(title);
+    content.appendChild(description);
 }
 
 close.addEventListener('click', function() {
