@@ -4,7 +4,7 @@ let close = document.getElementById('close');
 
 
 function ajax() {
-    let requist = new XMLDocument();
+    let requist = new XMLHttprequest();
     requist.open('GET', 'http://jsonplaceholder.typicode.com/posts')
 
     requist.addEventListener('load', function(){
