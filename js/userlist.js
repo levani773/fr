@@ -55,10 +55,16 @@ function openoverlay(id) {
     overlay.classList.add('active');
     let url = 'http://jsonplaceholder.typicode.com/posts/$[id]';
     ajax(url, function(data) {
-        console.log(data);
+        overlayfunction(data);
     }) 
     console.log(id);
 }
+
+function overlayfunction(item) {
+    let spanuserid = document.createElement('span');
+    spanuserid.innerText = item.userId;
+}
+
 close.addEventListener('click', function() {
     overlay.classList.remove('active');
 });
