@@ -31,7 +31,13 @@ function printdata(data) {
 function createPost(item) {
     let divWraper = document.createElement('div'); //შევქმენი დივი
     divWraper.classList.add('posts');
-    divWraper.setAttribute('data-id', item.id);
+    divWraper.setAttribute('data.id', item.id);
+
+    let deletebutton = document.createElement('button');
+    event.stopPropagation();
+    deletebutton.setAttribute('data.id', item.id);
+    deletebutton.innerText = 'delete';
+
 
     let h1 = document.createElement('h1'); //შევქმენი 
     h1.innerText = item.id;
@@ -42,9 +48,15 @@ function createPost(item) {
     
     divWraper.appendChild(h1);  //ჩავსვი დივში
     divWraper.appendChild(text); //ჩავსვი დივში
+    divWraper.appendChild(deletebutton);
+
+    deletebutton.addEventListener('click', function(event){
+        let id = event.target.getAttribute('data.id');
+        deletepost(id);
+    });
 
     divWraper.addEventListener('click', function(event) {
-        let id = event.target.getAttribute('data-id');
+        let id = event.target.getAttribute('data.id');
         openoverlay(id);
     }); 
 
@@ -57,15 +69,21 @@ function openoverlay(id) {
     ajax(url, function(data) {
         overlayfunction(data);
     }) 
-    console.log(id);
+    //console.log(id);
+}
+function deletepost(id){
+    let url = 'https://jsonplaceholder.typicode.com/posts/$[id]';
+    fetch(url {
+        method
+    })
 }
 
 function overlayfunction(item) {
     let spanuserid = document.createElement('span');
-    spanuserid.innerText = item.userId;
+    spanuserid.innerText = item.userid;
 
-    let pId = document.createElement('p');
-    pId.innerText = item.Id;
+    let pid = document.createElement('p');
+    pid.innerText = item.id;
 
     let title = document.createElement('h2');
     title.innerText = item.title;
@@ -74,7 +92,7 @@ function overlayfunction(item) {
     description.innerText = item.body;
 
     content.appendChild(spanuserid);
-    content.appendChild(pId);
+    content.appendChild(pid);
     content.appendChild(title);
     content.appendChild(description);
 }
