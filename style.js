@@ -1,4 +1,4 @@
-fetch('user.json', {
+fetch('users.json', {
     method: 'GET'
 })
 .then(function(response) {
