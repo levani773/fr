@@ -1,4 +1,4 @@
-fetch('https://reqres.in/api/users?page=2' , {
+fetch('user.json', {
     method: 'GET'
 })
 .then(function(response) {
